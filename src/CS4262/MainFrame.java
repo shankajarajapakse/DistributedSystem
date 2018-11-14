@@ -579,7 +579,8 @@ public class MainFrame extends javax.swing.JFrame {
         //Reset previous search results
         clearPreResults();
         
-        String fileName = fileNameTextField.getText();
+        String fileName = fileNameTextField.getText().toLowerCase();
+        
         if(!fileName.equals("")){
             SearchInitializer.getInstance().localSearch(fileName);
         }
