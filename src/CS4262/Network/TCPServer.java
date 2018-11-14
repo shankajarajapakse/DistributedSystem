@@ -61,7 +61,7 @@ public class TCPServer extends Thread implements IInitializerDownload {
                 out = new PrintWriter(clientSocket.getOutputStream(), true);
                 in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
                 String file = in.readLine();
-                JOptionPane.showMessageDialog(MainFrame.getInstance(), "file name : " + file.split(",")[2].replace("_", " ").trim());
+                MainFrame.getInstance().displaySuccessMsg("file name : " + file.split(",")[2].replace("_", " ").trim());
                 this.downloadedFile = file;
                 stopServer();
             } catch (IOException ex) {

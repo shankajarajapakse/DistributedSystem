@@ -5,13 +5,14 @@ import CS4262.Core.SearchInitializer;
 import CS4262.Helpers.UICreator;
 import CS4262.Models.Node;
 import CS4262.Network.BSConnector;
-import java.awt.Color;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
+import java.io.File;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -39,6 +40,9 @@ public class MainFrame extends javax.swing.JFrame {
         
         this.setResizable(false);
         this.setTitle("  Distributed file system");
+        
+        
+        setIconImage(new ImageIcon("..\\src\\CS4262\\Resourse\\folder.png").getImage());
         //Set frame position
         Dimension dim = Toolkit.getDefaultToolkit().getScreenSize(); 
         this.setLocation(dim.width / 2 - this.getSize().width / 2, dim.height / 2 - this.getSize().height / 2);
@@ -681,6 +685,11 @@ public class MainFrame extends javax.swing.JFrame {
     
     public void displayError(String errMsg){
         JOptionPane.showMessageDialog(this, errMsg, "Failure", JOptionPane.ERROR_MESSAGE);
+    }
+    
+    public void displaySuccessMsg( Object succMsg)
+    {
+        JOptionPane.showMessageDialog(this, succMsg, "success", JOptionPane.PLAIN_MESSAGE);
     }
     
     

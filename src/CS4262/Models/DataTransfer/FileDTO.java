@@ -1,9 +1,6 @@
 package CS4262.Models.DataTransfer;
 
 import CS4262.Models.File;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.io.Serializable;
 /**
  *
@@ -62,7 +59,7 @@ public class FileDTO implements Serializable {
     public String getSerializedObj() {
         String serializedObject = null;
         // serialize the object
-        // format = file content,size,name
+        // format = file_content,size,name
         File f = this.fileObject;
         serializedObject = f.getBody()+","+f.getFileSize()+","+f.getName();
         return serializedObject;
